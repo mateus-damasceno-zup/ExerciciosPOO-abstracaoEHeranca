@@ -37,12 +37,13 @@ public abstract class ContaBancaria {
     }
 
 
-    public void sacar(double valor) {
+    public double sacar(double valor) {
         if (getSaldo()<= 0|| getSaldo()<valor){
             System.out.println("saldo insuficiente, voce possui "+ getSaldo());
         }else{
             setSaldo(getSaldo()-valor);
         }
+        return valor;
     }
 
 

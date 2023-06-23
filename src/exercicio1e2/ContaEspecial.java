@@ -19,12 +19,14 @@ public class ContaEspecial extends ContaBancaria implements Tributos{
     }
 
     @Override
-    public void sacar(double valor) {
+    public double sacar(double valor) {
+        double saldo = getSaldo();
         if (getSaldo()<= 0|| getSaldo()<valor || valor > limite){
             System.out.println("saldo insuficiente, ou limite excedido, voce possui "+ getSaldo()+" com limite de "+getLimite());
-        }else{
-            setSaldo(getSaldo()-valor);
+        return saldo;
         }
+        return saldo - valor;
+
 
     }
 
